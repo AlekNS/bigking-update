@@ -1,0 +1,10 @@
+/nbproject
+/gui/build
+*.pro.user
+/build
+/runit
+/runit.bat
+.lock-waf_*
+*.h.gch
+*.pyc
+/temp

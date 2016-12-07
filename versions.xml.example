@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<updates format="0.0.1">
+    <identifier>SmitlabService</identifier>
+    <versions>
+        <up for="0.2.1" to="0.2.2" md5="e7fef7a83aad2fbef8bded1889f9d23e" />
+    </versions>
+</updates>

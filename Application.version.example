@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<info>
+    <identifier>ApplicationID</identifier>
+    <version>0.0.1</version>
+    <platform>win32/lin64/etc</platform>
+</info>

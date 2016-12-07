@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BigKingUpdateSystem>
+    <identifier>09e5715ae1e04405a5237da90e644b6b</identifier>
+    <temporary>c:\ProgramData\BigKingUpdate\temp</temporary>
+    <logging>
+        <formatters>
+            <fullFormat>
+                <class>PatternFormatter</class>
+                <pattern>%Y-%m-%d %H:%M:%S %T - %s [%q] : %t</pattern>
+                <times>local</times>
+            </fullFormat>
+        </formatters>
+        <loggers>
+            <root>
+                <channel>dual</channel>
+                <level>information</level>
+            </root>
+        </loggers>
+        <channels>
+            <console>
+                <class>ConsoleChannel</class>
+                <formatter>fullFormat</formatter>
+            </console>
+            <file>
+                <class>FileChannel</class>
+                <formatter>fullFormat</formatter>
+                <path>c:\ProgramData\BigKingUpdate\logs</path>
+                <rotation>1 M</rotation>
+                <compress>true</compress>
+                <archive>timestamp</archive>
+            </file>
+            <dual>
+                <class>SplitterChannel</class>
+                <channels>file,console</channels>
+            </dual>
+        </channels>
+    </logging>
+    <updateSoftwares>
+        <BigKingUpdateService>
+            <path>c:\ProgramData\BigKingUpdate</path>
+            <uri>http://updates:8181/smitlab/updates/packages/bigking_update_service</uri>
+            <notify>http://updates:8181/smitlab/updates/notify</notify>
+        </BigKingUpdateService>
+        <SmitlabService>
+            <path>c:\ProgramData\SmitlabService</path>
+            <uri>http://doom:8181/smitlab/updates/packages/smitlab_service</uri>
+            <notify>http://doom:8181/smitlab/updates/notify</notify>
+            <schedules>
+                <start>on</start>
+                <everyminutes><minute>*/2</minute></everyminutes>
+            </schedules>
+        </SmitlabService>
+    </updateSoftwares>
+</BigKingUpdateSystem>

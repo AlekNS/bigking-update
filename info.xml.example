@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<info update_version="0.1.1">
+    <identifier>SmitlabService</identifier>
+    <version>0.2.2</version>
+    <for>0.2.1</for>
+    <description>Update libs for devices</description>
+    <commands>
+        <work>
+            <shell os_type="windows" skip_error="true">net stop SmitlabService</shell>
+            <copy os_type="windows">instruments/advia60.dll</copy>
+            <copy os_type="windows">instruments/beckmancad2.dll</copy>
+            <copy os_type="windows">instruments/laurasmart.dll</copy>
+        </work>
+        <success>
+            <shell>echo Success!</shell>
+        </success>
+        <error>
+            <shell>echo Error!</shell>
+        </error>
+        <done>
+            <shell>echo Done! Try to start SmitlabService...</shell>
+            <shell os_type="windows">net start SmitlabService</shell>
+        </done>
+    </commands>
+</info>
